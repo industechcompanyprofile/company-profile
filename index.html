@@ -54,3 +54,84 @@
 
 </body>
 </html>
+<style>
+.chat-container {
+  width: 320px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.chat-header {
+  background: #007bff;
+  color: white;
+  padding: 12px;
+  border-radius: 10px 10px 0 0;
+  cursor: pointer;
+}
+
+.chat-body {
+  display: none;
+  background: #f9f9f9;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+}
+
+.chat-body input,
+.chat-body textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.chat-body button {
+  width: 100%;
+  padding: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.chat-body button:hover {
+  background: #0056b3;
+}
+
+.chat-intro {
+  font-size: 13px;
+  margin-bottom: 10px;
+  color: #555;
+}
+</style>
+
+<div class="chat-container">
+  <div class="chat-header" onclick="toggleChat()">
+    💬 Chat with Us
+  </div>
+
+  <div class="chat-body" id="chatBox">
+    <div class="chat-intro">
+      Hello 👋 Please leave your inquiry and we will email you back.
+    </div>
+
+    <form action="https://formspree.io/f/xpqollyz" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="4" placeholder="Type your message..." required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</div>
+
+<script>
+function toggleChat() {
+  var chat = document.getElementById("chatBox");
+  chat.style.display = chat.style.display === "block" ? "none" : "block";
+}
+</script>
