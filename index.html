@@ -1,146 +1,30 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Company Profile</title>
+<body style="margin:0; font-family: Arial, sans-serif; background: linear-gradient(to right, #0f2027, #2c5364);">
 
-    <!-- para responsive sa phone -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- LOGO + TITLE -->
+    <div style="text-align:center; padding:20px 10px 10px 10px;">
+        
+        <img src="logo.png" alt="Company Logo"
+        style="width:500px; max-width:90%; display:block; margin:0 auto;">
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial;
-            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-            text-align: center;
-            color: white;
-        }
+        <h1 style="color:white; margin-top:10px; margin-bottom:5px;">
+            Company Profile
+        </h1>
 
-        h1 {
-            padding-top: 20px;
-        }
-
-        /* malaking button */
-        .btn {
-            display: inline-block;
-            margin: 20px;
-            padding: 15px 30px;
-            font-size: 18px;
-            background-color: #00c6ff;
-            color: white;
-            text-decoration: none;
-            border-radius: 0px;
-        }
-
-        iframe {
-            width: 95%;
-            height: 60vh;
-            border: none;
-            border-radius: 10px;
-        }
-    </style>
-</head>
-
-<body>
-
-<div style="text-align:center; margin-top:0px; margin-bottom:0px;">
-
-  <img src="logo.png" alt="Company Logo"
-       style="width:600px; max-width:90%; margin-bottom:0px;">
-
-  <h1 style="color:white; margin:0;">
-    Company Profile
-  </h1>
-
-</div>
-
-<!-- MALAKING BUTTON -->
-<a href="presentation.pdf" class="btn" target="_blank">
-    📄 Open Full Screen
-</a>
-
-<!-- PDF VIEW -->
-<iframe src="presentation.pdf"></iframe>
-
-</body>
-</html>
-<style>
-.chat-container {
-  width: 320px;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  font-family: Arial, sans-serif;
-}
-
-.chat-header {
-  background: #007bff;
-  color: white;
-  padding: 12px;
-  border-radius: 10px 10px 0 0;
-  cursor: pointer;
-}
-
-.chat-body {
-  display: none;
-  background: #f9f9f9;
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-top: none;
-  border-radius: 0 0 10px 10px;
-}
-
-.chat-body input,
-.chat-body textarea {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.chat-body button {
-  width: 100%;
-  padding: 10px;
-  background: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.chat-body button:hover {
-  background: #0056b3;
-}
-
-.chat-intro {
-  font-size: 13px;
-  margin-bottom: 10px;
-  color: #555;
-}
-</style>
-
-<div class="chat-container">
-  <div class="chat-header" onclick="toggleChat()">
-    💬 Chat with Us
-  </div>
-
-  <div class="chat-body" id="chatBox">
-    <div class="chat-intro">
-      Hello 👋 Please leave your inquiry and we will email you back.
     </div>
 
-    <form action="https://formspree.io/f/xpqollyz" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" rows="4" placeholder="Type your message..." required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </div>
-</div>
+    <!-- BUTTON -->
+    <div style="text-align:center; margin-bottom:15px;">
+        <a href="presentation.pdf" target="_blank"
+        style="background:#00bcd4; color:white; padding:10px 20px; border-radius:8px; text-decoration:none; font-weight:bold;">
+            📄 Open Full Screen
+        </a>
+    </div>
 
-<script>
-function toggleChat() {
-  var chat = document.getElementById("chatBox");
-  chat.style.display = chat.style.display === "block" ? "none" : "block";
-}
-</script>
+    <!-- PDF VIEW -->
+    <div style="display:flex; justify-content:center;">
+        <iframe src="presentation.pdf"
+        style="width:90%; height:75vh; border:none; border-radius:10px;">
+        </iframe>
+    </div>
+
+</body>
