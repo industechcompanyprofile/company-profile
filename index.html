@@ -1,31 +1,65 @@
-<body style="margin:0; font-family: Arial, sans-serif; background: linear-gradient(to right, #0f2027, #2c5364);">
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Company Profile</title>
 
-    <!-- LOGO + TITLE -->
-    <div style="text-align:center; padding:20px 10px 10px 10px;">
-        
-        <img src="logo.png" alt="Company Logo"
-        style="width:500px; max-width:90%; display:block; margin:0 auto;">
+    <!-- para responsive sa phone -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <h1 style="color:white; margin-top:10px; margin-bottom:5px;">
-            Company Profile
-        </h1>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            text-align: center;
+            color: white;
+        }
 
-    </div>
+        h1 {
+            padding-top: 10px;
+        }
 
-    <!-- BUTTON -->
-    <div style="text-align:center; margin-bottom:15px;">
-        <a href="presentation.pdf" target="_blank"
-        style="background:#00bcd4; color:white; padding:10px 20px; border-radius:8px; text-decoration:none; font-weight:bold;">
-            📄 Open Full Screen
-        </a>
-    </div>
+        /* malaking button */
+        .btn {
+            display: inline-block;
+            margin: 10px;
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #00c6ff;
+            color: white;
+            text-decoration: none;
+            border-radius: 0px;
+        }
 
-    <!-- PDF VIEW -->
-    <div style="display:flex; justify-content:center;">
-        <iframe src="presentation.pdf"
-        style="width:90%; height:75vh; border:none; border-radius:10px;">
-        </iframe>
-    </div>
+        iframe {
+            width: 95%;
+            height: 60vh;
+            border: none;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div style="text-align:center; margin-top:0px; margin-bottom:0px;">
+
+  <img src="logo.png" alt="Company Logo"
+       style="width:500px; max-width:90%; margin-bottom:0px;">
+
+  <h1 style="color:white; margin:0;">
+    Company Profile
+  </h1>
+
+</div>
+
+<!-- MALAKING BUTTON -->
+<a href="presentation.pdf" class="btn" target="_blank">
+    📄 Open Full Screen
+</a>
+
+<!-- PDF VIEW -->
+<iframe src="presentation.pdf"></iframe>
 
 </body>
 </html>
