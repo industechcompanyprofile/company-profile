@@ -3,32 +3,55 @@
 <head>
     <title>Company Profile</title>
 
-    <!-- para responsive sa phone -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
         body {
             margin: 0;
             font-family: Arial;
-            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-            text-align: center;
             color: white;
         }
 
-        h1 {
-            padding-top: 10px;
+        /* 🔥 HERO SECTION (dito lalagay background) */
+        .hero {
+            position: relative;
+            background-image: url('background.jpg'); /* PALITAN mo name kung iba */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 80px 20px;
+            text-align: center;
         }
 
-        /* malaking button */
+        /* 🔥 DARK OVERLAY para malinaw text */
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            margin: 10px 0;
+        }
+
         .btn {
             display: inline-block;
-            margin: 10px;
+            margin: 20px;
             padding: 15px 30px;
             font-size: 18px;
             background-color: #00c6ff;
             color: white;
             text-decoration: none;
-            border-radius: 0px;
+            border-radius: 5px;
         }
 
         iframe {
@@ -36,87 +59,90 @@
             height: 60vh;
             border: none;
             border-radius: 10px;
+            margin-bottom: 40px;
+        }
+
+        /* CHAT DESIGN (unchanged pero inayos spacing) */
+        .chat-container {
+            width: 320px;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        .chat-header {
+            background: #007bff;
+            color: white;
+            padding: 12px;
+            border-radius: 10px 10px 0 0;
+            cursor: pointer;
+        }
+
+        .chat-body {
+            display: none;
+            background: #f9f9f9;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-top: none;
+            border-radius: 0 0 10px 10px;
+        }
+
+        .chat-body input,
+        .chat-body textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .chat-body button {
+            width: 100%;
+            padding: 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .chat-body button:hover {
+            background: #0056b3;
+        }
+
+        .chat-intro {
+            font-size: 13px;
+            margin-bottom: 10px;
+            color: #555;
         }
     </style>
 </head>
-    
-<div style="text-align:center; margin-top:0px; margin-bottom:0px;">
 
-  <img src="logo.png" alt="Company Logo"
-       style="width:500px; max-width:90%; margin-bottom:0px;">
+<body>
 
-  <h1 style="color:white; margin:0;">
-    Company Profile
-  </h1>
+<!-- 🔥 HERO SECTION WITH BACKGROUND -->
+<div class="hero">
+    <div class="hero-content">
 
+        <img src="logo.png" alt="Company Logo"
+             style="width:500px; max-width:90%;">
+
+        <h1>Company Profile</h1>
+
+        <a href="presentation.pdf" class="btn" target="_blank">
+            📄 Open Full Screen
+        </a>
+
+    </div>
 </div>
 
-<!-- MALAKING BUTTON -->
-<a href="presentation.pdf" class="btn" target="_blank">
-    📄 Open Full Screen
-</a>
-
 <!-- PDF VIEW -->
-<iframe src="presentation.pdf"></iframe>
+<div style="text-align:center;">
+    <iframe src="presentation.pdf"></iframe>
+</div>
 
-</body>
-</html>
-<style>
-.chat-container {
-  width: 320px;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  font-family: Arial, sans-serif;
-}
-
-.chat-header {
-  background: #007bff;
-  color: white;
-  padding: 12px;
-  border-radius: 10px 10px 0 0;
-  cursor: pointer;
-}
-
-.chat-body {
-  display: none;
-  background: #f9f9f9;
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-top: none;
-  border-radius: 0 0 10px 10px;
-}
-
-.chat-body input,
-.chat-body textarea {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.chat-body button {
-  width: 100%;
-  padding: 10px;
-  background: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.chat-body button:hover {
-  background: #0056b3;
-}
-
-.chat-intro {
-  font-size: 13px;
-  margin-bottom: 10px;
-  color: #555;
-}
-</style>
-
+<!-- CHAT -->
 <div class="chat-container">
   <div class="chat-header" onclick="toggleChat()">
     💬 Chat with Us
@@ -142,3 +168,6 @@ function toggleChat() {
   chat.style.display = chat.style.display === "block" ? "none" : "block";
 }
 </script>
+
+</body>
+</html>
