@@ -12,18 +12,18 @@
             color: white;
         }
 
-        /* 🔥 HERO SECTION (dito lalagay background) */
+        /* 🔥 HERO SECTION */
         .hero {
             position: relative;
-            background-image: url('background.jpg'); /* PALITAN mo name kung iba */
+            background-image: url('background.jpg'); /* PALITAN kung iba filename */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            padding: 80px 20px;
+            padding: 100px 20px;
             text-align: center;
         }
 
-        /* 🔥 DARK OVERLAY para malinaw text */
+        /* 🔥 DARK OVERLAY */
         .hero::before {
             content: "";
             position: absolute;
@@ -37,6 +37,16 @@
         .hero-content {
             position: relative;
             z-index: 1;
+        }
+
+        /* 🔥 LOGO POSITION (LOWER LEFT) */
+        .logo {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            width: 250px;
+            max-width: 50%;
+            z-index: 2;
         }
 
         h1 {
@@ -62,7 +72,7 @@
             margin-bottom: 40px;
         }
 
-        /* CHAT DESIGN (unchanged pero inayos spacing) */
+        /* CHAT */
         .chat-container {
             width: 320px;
             position: fixed;
@@ -117,39 +127,24 @@
             color: #555;
         }
     </style>
-    body {
-        margin: 0;
-        font-family: Arial;
-    }
-
-    /* 🔥 ADD MO ITO */
-    .logo {
-        position: absolute;
-        bottom: 20px;
-        left: 20px;
-        width: 250px;
-        max-width: 50%;
-        z-index: 2;
-    }
-
-</style>
 </head>
 
 <body>
 
-<!-- 🔥 HERO SECTION WITH BACKGROUND -->
+<!-- 🔥 HERO WITH BACKGROUND -->
 <div class="hero">
+
+    <!-- LOGO (lower-left na) -->
+    <img src="logo.png" class="logo">
+
     <div class="hero-content">
-
-      <img src="logo.png" class="logo">
-
         <h1>Company Profile</h1>
 
         <a href="presentation.pdf" class="btn" target="_blank">
             📄 Open Full Screen
         </a>
-
     </div>
+
 </div>
 
 <!-- PDF VIEW -->
